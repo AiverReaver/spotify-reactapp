@@ -1,0 +1,67 @@
+.section-sidenav {
+    background-color: #020202d7;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.logo {
+    width: 56%;
+    margin-top: 0;
+    margin: 0 25px 30px;
+}
+
+.logo a {
+    color: #fff;
+}
+
+.sidenav-heading {
+    margin-bottom: 8px;
+    color: rgb(160, 160, 160);
+}
+
+.section-sidenav .secondary-nav,
+.section-sidenav .user-playlist {
+    margin: 25px 0;
+}
+
+.section-sidenav .secondary-nav h6,
+.section-sidenav .user-playlist h6 {
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.section-sidenav .main-nav a,
+.section-sidenav .secondary-nav a,
+.section-sidenav .user-playlist a {
+    padding-left: 20px;
+}
+
+.section-sidenav .main-nav a:link,
+.section-sidenav .main-nav a:visited,
+.section-sidenav .secondary-nav a:link,
+.section-sidenav .secondary-nav a:visited,
+.section-sidenav .user-playlist a:link,
+.section-sidenav .user-playlist a:visited {
+    color: rgb(185, 185, 185);
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    font-size: 90%;
+    transition: color 0.2s ease-in-out;
+}
+
+.section-sidenav .main-nav a:hover,
+.section-sidenav .main-nav a:active,
+.section-sidenav .secondary-nav a:hover,
+.section-sidenav .secondary-nav a:active,
+.section-sidenav .user-playlist a:hover,
+.section-sidenav .user-playlist a:active {
+    color: #fff;
+}
