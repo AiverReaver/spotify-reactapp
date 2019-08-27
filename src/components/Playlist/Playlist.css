@@ -20,7 +20,7 @@
 }
 
 .playlist-detail {
-    margin-top: 60px;
+    margin-top: 80px;
     margin-left: 5px;
     margin-bottom: 20px;
 }
@@ -56,8 +56,119 @@
 .playlist-follower {
     color: rgb(185, 185, 185);
     float: right;
+    margin-right: 110px;
 }
 
 .playlist-follower h6 {
     text-align: right;
+}
+
+.user-song-playlist-row {
+    margin-left: 30px;
+    margin-right: 200px;
+}
+
+.song-header-container {
+    display: flex;
+    border-bottom: 1px solid #666;
+    padding-bottom: 6px;
+    margin: 20px auto 0;
+    align-items: flex-end;
+}
+
+.song-title-header,
+.song-artist-header,
+.song-album-header,
+.song-added-header {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #ccc;
+    padding: 0 8px;
+
+}
+
+.song-album p,
+.song-title p,
+.song-artist p {
+    display: block;
+    max-width: 80%;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    font-weight: 400;
+}
+
+.song-title,
+.song-title-header {
+    width: 250px;
+}
+
+.song-title-header {
+    margin-left: 92px
+}
+
+.song-artist,
+.song-artist-header {
+    width: 180px;
+}
+
+.song-album,
+.song-album-header {
+    width: 190px;
+    max-width: 190px;
+    overflow: hidden;
+}
+
+.song-added,
+.song-added-header {
+    width: 80px;
+    color: #ccc;
+}
+
+.song-added-header i {
+    font-size: 16px;
+}
+
+.user-song-item {
+    list-style-type: none;
+    border-bottom: 1px solid #666;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 40px;
+    font-size: 14px;
+
+}
+
+.user-song-item:hover {
+    background-color: rgba(59, 59, 59, 0.4);
+}
+
+.user-song-item:hover .play-song {
+    opacity: 1;
+}
+
+.user-song-item .play-song {
+    width: 40px;
+    opacity: 0;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.user-song-item .play-song a {
+    padding: 2px;
+    vertical-align: middle;
+}
+
+.add-song {
+    cursor: pointer;
+    z-index: 1;
+    width: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.add-song i {
+    font-size: 18px;
+    font-weight: 100;
+    vertical-align: middle;
 }

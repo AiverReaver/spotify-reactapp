@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { getAverage } from './helpers';
 import './App.css';
 import './index.css';
 import Header from './components/Header/component';
@@ -10,7 +9,17 @@ import Playlist from './components/Playlist/component';
 import Spotify from './api';
 
 class App extends React.Component {
-    state = { playlists: [], selectedPlaylist: null, display_name: '' };
+    state = {
+        playlists: [],
+        selectedPlaylist: null,
+        display_name: '',
+        backgroundColor: { r: 0, g: 0, b: 0 }
+    };
+
+    constructor(props) {
+        super(props);
+        this.containerRef = React.createRef();
+    }
 
     componentDidMount() {
         let hashParams = {};
@@ -63,15 +72,14 @@ class App extends React.Component {
         });
     };
 
-    setBackgrounColor = imgref => {
-        // getAverage(imgref);
-        console.log(imgref);
+    setBackgrounColor = color => {
+        this.containerRef.current.style.backgroundColor = color.hexa;
     };
 
     render() {
         return (
             <div>
-                <div className="container" style={{ backgroundColor: '#fff' }}>
+                <div className="container" ref={this.containerRef}>
                     <Header display_name={this.state.display_name} />
                     <Sidenav
                         onPlaylistSelected={this.onPlaylistSelected}
