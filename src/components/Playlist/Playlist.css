@@ -1,7 +1,10 @@
 .main {
     margin-left: 250px;
     padding: 0px 10px;
-    position: relative;
+    position: fixed;
+    width: calc(100vw - 250px);
+    overflow-y: auto;
+    height: calc(100% - 80px);
 }
 
 .main h2 {

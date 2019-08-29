@@ -1,0 +1,94 @@
+.playbar-container {
+    border-top: 1px solid #111;
+    height: 80px;
+    width: 100%;
+    background-color: #282828;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+
+.playbar-container .song-detail {
+    display: flex;
+    height: 55px;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+}
+
+.song-detail img {
+    width: 55px;
+    height: 55px;
+}
+
+.song-name {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    color: #fff;
+    font-size: 14px;
+}
+.artist-name {
+    font-family: 'Proxima Thin', Georgia, sans-serif;
+    color: #aaa;
+    font-size: 12px;
+}
+
+.song-name-artist {
+    text-align: left;
+    line-height: 22px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.song-controls {
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 20px;
+}
+
+.song-controls .reverse-song,
+.song-controls .next-song {
+    align-self: center;
+    height: 24px;
+}
+
+.play-btn a {
+    margin: 0 10px;
+}
+
+.song-progress-container {
+    margin-top: 10px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.timer-start {
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+    left: -10px;
+}
+.song-progress {
+    width: 500px;
+    height: 4px;
+    background: rgb(64, 64, 64);
+    border-radius: 4px;
+}
+
+.song-expired {
+    margin: 0;
+    width: 100px;
+    height: 4px;
+    background: #1db954;
+    border-radius: 4px;
+}
+
+.timer-end {
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+    left: 10px;
+}

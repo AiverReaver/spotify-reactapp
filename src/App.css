@@ -1,11 +1,11 @@
 .container {
-    background: linear-gradient(310deg, #070707e3, #0e0e0e52);
-    height: 100vh;
+    background: linear-gradient(310deg, #070707ef, #0e0e0e52);
+    height: calc(100vh - 80px);
     width: 100vw;
     position: fixed;
     left: 0;
     top: 0;
-    overflow-y: scroll;
+
 }
 
 

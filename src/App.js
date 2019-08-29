@@ -2,17 +2,19 @@ import React from 'react';
 
 import './App.css';
 import './index.css';
-import Header from './components/Header/component';
+// import Header from './components/Header/component';
 import Sidenav from './components/Sidenav/component';
 import Playlist from './components/Playlist/component';
 
 import Spotify from './api';
+import Playbar from './components/Playbar/component';
 
 class App extends React.Component {
     state = {
         playlists: [],
         selectedPlaylist: null,
         display_name: '',
+        currentTrack: null,
         backgroundColor: { r: 0, g: 0, b: 0 }
     };
 
@@ -37,9 +39,18 @@ class App extends React.Component {
             localStorage.setItem('token', hashParams.access_token);
         }
 
-        this.getCurrentUserPlaylist();
         this.getCurrentUser(hashParams.access_token);
+        this.getCurrentUserPlaylist();
+        this.getCurrentlyPlayingTrack();
     }
+
+    getCurrentlyPlayingTrack = async () => {
+        const { data } = await Spotify.get('/me/player/currently-playing');
+
+        if (data.is_playing) {
+            this.setState({ currentTrack: data.item });
+        }
+    };
 
     getCurrentUserPlaylist = async () => {
         const { data } = await Spotify.get('/me/playlists');
@@ -80,7 +91,7 @@ class App extends React.Component {
         return (
             <div>
                 <div className="container" ref={this.containerRef}>
-                    <Header display_name={this.state.display_name} />
+                    {/* <Header display_name={this.state.display_name} /> */}
                     <Sidenav
                         onPlaylistSelected={this.onPlaylistSelected}
                         playlists={this.state.playlists}
@@ -89,6 +100,8 @@ class App extends React.Component {
                         setBackgrounColor={this.setBackgrounColor}
                         playlist={this.state.selectedPlaylist}
                     />
+
+                    <Playbar track={this.state.currentTrack} />
                 </div>
             </div>
         );

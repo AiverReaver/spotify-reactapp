@@ -1,6 +1,6 @@
 .section-sidenav {
     background-color: #020202d7;
-    height: 100%;
+    height: calc(100% - 80px);
     width: 250px;
     position: fixed;
     z-index: 1;
