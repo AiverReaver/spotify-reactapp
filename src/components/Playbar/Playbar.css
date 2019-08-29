@@ -26,6 +26,7 @@
     color: #fff;
     font-size: 14px;
 }
+
 .artist-name {
     font-family: 'Proxima Thin', Georgia, sans-serif;
     color: #aaa;
@@ -70,25 +71,4 @@
     position: relative;
     top: -5px;
     left: -10px;
-}
-.song-progress {
-    width: 500px;
-    height: 4px;
-    background: rgb(64, 64, 64);
-    border-radius: 4px;
-}
-
-.song-expired {
-    margin: 0;
-    width: 100px;
-    height: 4px;
-    background: #1db954;
-    border-radius: 4px;
-}
-
-.timer-end {
-    font-size: 12px;
-    position: relative;
-    top: -5px;
-    left: 10px;
 }

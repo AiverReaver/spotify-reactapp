@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 import './index.css';
-// import Header from './components/Header/component';
+import Header from './components/Header/component';
 import Sidenav from './components/Sidenav/component';
 import Playlist from './components/Playlist/component';
 
@@ -91,7 +91,7 @@ class App extends React.Component {
         return (
             <div>
                 <div className="container" ref={this.containerRef}>
-                    {/* <Header display_name={this.state.display_name} /> */}
+                    <Header display_name={this.state.display_name} />
                     <Sidenav
                         onPlaylistSelected={this.onPlaylistSelected}
                         playlists={this.state.playlists}

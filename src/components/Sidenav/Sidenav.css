@@ -42,18 +42,17 @@
     padding-left: 20px;
 }
 
-.section-sidenav .main-nav a:link,
-.section-sidenav .main-nav a:visited,
-.section-sidenav .secondary-nav a:link,
-.section-sidenav .secondary-nav a:visited,
-.section-sidenav .user-playlist a:link,
-.section-sidenav .user-playlist a:visited {
+
+.section-sidenav .main-nav a,
+.section-sidenav .secondary-nav a,
+.section-sidenav .user-playlist a {
     color: rgb(185, 185, 185);
     font-weight: 600;
     text-decoration: none;
     display: block;
     margin-bottom: 12px;
     font-size: 90%;
+    cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 

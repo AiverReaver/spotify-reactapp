@@ -4,7 +4,7 @@
     position: fixed;
     width: calc(100vw - 250px);
     overflow-y: auto;
-    height: calc(100% - 80px);
+    height: calc(100% - 140px);
 }
 
 .main h2 {
@@ -56,11 +56,7 @@
     float: left;
 }
 
-.playlist-follower {
-    color: rgb(185, 185, 185);
-    float: right;
-    margin-right: 110px;
-}
+
 
 .playlist-follower h6 {
     text-align: right;

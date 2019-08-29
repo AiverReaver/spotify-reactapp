@@ -34,16 +34,6 @@ const Playbar = ({ track }) => {
                     <i className="material-icons">skip_next</i>
                 </div>
             </div>
-            <div className="song-progress-container">
-                <p className="timer-start">0:02</p>
-                <div className="song-progress">
-                    <div
-                        className="song-expired"
-                        style={{ width: '33px' }}
-                    ></div>
-                </div>
-                <p className="timer-end">0:28</p>
-            </div>
         </section>
     );
 };

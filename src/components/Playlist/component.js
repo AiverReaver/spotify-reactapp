@@ -27,7 +27,7 @@ class Playlist extends React.Component {
             return (
                 <li className="user-song-item" key={track.id}>
                     <div className="play-song">
-                        <a href="#a" className="btn btn-ghost">
+                        <a href="#play" className="btn btn-ghost">
                             <i className="material-icons">play_arrow</i>
                         </a>
                     </div>
@@ -71,25 +71,20 @@ class Playlist extends React.Component {
                             <p className="playlist-detailed">
                                 Created by
                                 <span> {playlist.owner.display_name} </span> .
-                                &nbsp;{playlist.tracks.total}&nbsp; songs, 1 hr
-                                30 mins
+                                &nbsp;{playlist.tracks.total}&nbsp;song
                             </p>
                         </div>
                         <div className="playlist-container">
                             <div className="playlist-control">
-                                <a href="#a" className="btn btn-full">
+                                <a href="#play" className="btn btn-full">
                                     PLAY
                                 </a>
-                                <a href="#a" className="btn btn-ghost">
+                                <a href="#fav" className="btn btn-ghost">
                                     <i className="material-icons">favorite</i>
                                 </a>
-                                <a href="#a" className="btn btn-ghost">
+                                <a href="#more" className="btn btn-ghost">
                                     <i className="material-icons">more_horiz</i>
                                 </a>
-                            </div>
-                            <div className="playlist-follower">
-                                <h6>FOLLOWERS</h6>
-                                <h6>59,166</h6>
                             </div>
                         </div>
                     </div>

@@ -3,8 +3,17 @@ import React from 'react';
 import './Sidenav.css';
 
 class Sidenav extends React.Component {
+    componentDidMount() {
+        let hashParams = {};
+        let e,
+            r = /([^&;=]+)=?([^&;]*)/g,
+            q = window.location.hash.substring(1);
+        while ((e = r.exec(q))) {
+            hashParams[e[1]] = decodeURIComponent(e[2]);
+        }
+    }
+
     onPlaylistSelected = selectedPlaylist => {
-        // console.log(event);
         this.props.onPlaylistSelected(selectedPlaylist);
     };
 
@@ -13,9 +22,9 @@ class Sidenav extends React.Component {
         const playlistName = playlists.map(playlist => {
             return (
                 <a
-                    href="#a"
+                    href
                     key={playlist.id}
-                    onClick={() => {
+                    onClick={e => {
                         this.onPlaylistSelected(playlist);
                     }}
                 >
@@ -26,7 +35,7 @@ class Sidenav extends React.Component {
         return (
             <section className="section-sidenav">
                 <div className="logo">
-                    <a href="#a">
+                    <a href="#logo">
                         <svg
                             viewBox="0 0 1134 340"
                             className="spotify-logo--text"
@@ -40,28 +49,20 @@ class Sidenav extends React.Component {
                     </a>
                 </div>
                 <div className="main-nav">
-                    <a href="#a" className="active">
+                    <a href className="active">
                         <i className="material-icons">home</i>
                         Home
                     </a>
-                    <a href="#a">
+                    <a href>
                         <i className="material-icons">search</i>
                         Search
                     </a>
-                    <a href="#a">
+                    <a href>
                         <i className="material-icons">library_music</i>
                         Your Library
                     </a>
                 </div>
-                <div className="secondary-nav">
-                    <h6 className="sidenav-heading">YOUR LIBRARY</h6>
-                    <a href="#a">Made for you</a>
-                    <a href="#a">Liked Songs</a>
-                    <a href="#a">Recently Played</a>
-                    <a href="#a">Albums</a>
-                    <a href="#a">Artists</a>
-                    <a href="#a">Podcasts</a>
-                </div>
+
                 <div className="user-playlist">
                     <h6 className="sidenav-heading">PLAYLISTS</h6>
                     {playlistName}
