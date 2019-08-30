@@ -5,7 +5,7 @@ import './Playbar.css';
 const Playbar = ({ track }) => {
     let songdetails = '';
 
-    if (track) {
+    if (track.artists !== undefined) {
         const artists = track.artists.map(artist => artist.name).join(', ');
         songdetails = (
             <div className="song-detail">

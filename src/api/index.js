@@ -7,6 +7,4 @@ const spotify = axios.create({
     }
 });
 
-console.log('hello');
-
 export default spotify;

@@ -1,13 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './App.css';
 import './index.css';
+import Spotify from './api';
 import Header from './components/Header/component';
 import Sidenav from './components/Sidenav/component';
 import Playlist from './components/Playlist/component';
-
-import Spotify from './api';
 import Playbar from './components/Playbar/component';
+import {
+    fetchPlaylists,
+    fetchUser,
+    fetchPlaylistTracks,
+    fetchCurrentlyPlayingTrack
+} from './actions';
 
 class App extends React.Component {
     state = {
@@ -39,9 +45,9 @@ class App extends React.Component {
             localStorage.setItem('token', hashParams.access_token);
         }
 
-        this.getCurrentUser(hashParams.access_token);
-        this.getCurrentUserPlaylist();
-        this.getCurrentlyPlayingTrack();
+        this.props.fetchUser();
+        this.props.fetchPlaylists();
+        this.props.fetchCurrentlyPlayingTrack();
     }
 
     getCurrentlyPlayingTrack = async () => {
@@ -52,32 +58,9 @@ class App extends React.Component {
         }
     };
 
-    getCurrentUserPlaylist = async () => {
-        const { data } = await Spotify.get('/me/playlists');
-        this.setState({ playlists: data.items });
-    };
-
-    getPlaylistTracks = async playlist => {
-        if (playlist) {
-            const { data } = await Spotify.get(
-                `/playlists/${playlist.id}/tracks`
-            );
-
-            return data;
-        }
-
-        return null;
-    };
-
-    getCurrentUser = async token => {
-        const { data } = await Spotify.get('/me');
-
-        this.setState({ display_name: data.display_name });
-    };
-
     onPlaylistSelected = async selectedPlaylist => {
-        const { items } = await this.getPlaylistTracks(selectedPlaylist);
-        selectedPlaylist.fetchedTracks = items;
+        await this.props.fetchPlaylistTracks(selectedPlaylist);
+        selectedPlaylist.fetchedTracks = this.props.playlistTracks;
         this.setState({
             selectedPlaylist: selectedPlaylist
         });
@@ -91,21 +74,33 @@ class App extends React.Component {
         return (
             <div>
                 <div className="container" ref={this.containerRef}>
-                    <Header display_name={this.state.display_name} />
+                    <Header display_name={this.props.user} />
                     <Sidenav
                         onPlaylistSelected={this.onPlaylistSelected}
-                        playlists={this.state.playlists}
+                        playlists={this.props.playlists}
                     />
                     <Playlist
                         setBackgrounColor={this.setBackgrounColor}
                         playlist={this.state.selectedPlaylist}
                     />
 
-                    <Playbar track={this.state.currentTrack} />
+                    <Playbar track={this.props.currentTrack} />
                 </div>
             </div>
         );
     }
 }
 
-export default App;
+const mapStateToProps = ({ playlists, user, playlistTracks, currentTrack }) => {
+    return { playlists, user, playlistTracks, currentTrack };
+};
+
+export default connect(
+    mapStateToProps,
+    {
+        fetchPlaylists,
+        fetchUser,
+        fetchPlaylistTracks,
+        fetchCurrentlyPlayingTrack
+    }
+)(App);
