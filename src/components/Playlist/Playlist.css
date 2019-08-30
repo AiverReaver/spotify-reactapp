@@ -23,7 +23,7 @@
 }
 
 .playlist-detail {
-    margin-top: 80px;
+    margin-top: 85px;
     margin-left: 5px;
     margin-bottom: 20px;
 }
@@ -51,12 +51,9 @@
 
 .playlist-control {
     height: 100%;
-
     margin-left: 5px;
     float: left;
 }
-
-
 
 .playlist-follower h6 {
     text-align: right;
@@ -153,8 +150,8 @@
     text-align: center;
 }
 
-.user-song-item .play-song a {
-    padding: 2px;
+.user-song-item .play-song button {
+    padding: 5px;
     vertical-align: middle;
 }
 

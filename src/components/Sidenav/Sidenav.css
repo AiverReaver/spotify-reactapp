@@ -16,6 +16,7 @@
     margin: 0 25px 30px;
 }
 
+
 .logo a {
     color: #fff;
 }
@@ -36,31 +37,32 @@
     padding-bottom: 10px;
 }
 
-.section-sidenav .main-nav a,
-.section-sidenav .secondary-nav a,
-.section-sidenav .user-playlist a {
-    padding-left: 20px;
-}
 
 
-.section-sidenav .main-nav a,
-.section-sidenav .secondary-nav a,
-.section-sidenav .user-playlist a {
-    color: rgb(185, 185, 185);
+.section-sidenav .main-nav button,
+.section-sidenav .secondary-nav button,
+.section-sidenav .user-playlist button {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
     font-weight: 600;
-    text-decoration: none;
-    display: block;
     margin-bottom: 12px;
+    outline: none;
     font-size: 90%;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    color: #b9b9b9;
+    border: 0;
+    padding-left: 20px;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
 }
 
-.section-sidenav .main-nav a:hover,
-.section-sidenav .main-nav a:active,
-.section-sidenav .secondary-nav a:hover,
-.section-sidenav .secondary-nav a:active,
-.section-sidenav .user-playlist a:hover,
-.section-sidenav .user-playlist a:active {
+.section-sidenav .user-playlist button {
+    font-weight: 100;
+}
+
+.section-sidenav .main-nav button:hover,
+.section-sidenav .secondary-nav button:hover,
+.section-sidenav .user-playlist button:hover {
     color: #fff;
 }

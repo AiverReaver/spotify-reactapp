@@ -21,15 +21,14 @@ class Sidenav extends React.Component {
         const { playlists } = this.props;
         const playlistName = playlists.map(playlist => {
             return (
-                <a
-                    href
+                <button
                     key={playlist.id}
                     onClick={e => {
                         this.onPlaylistSelected(playlist);
                     }}
                 >
                     {playlist.name}
-                </a>
+                </button>
             );
         });
         return (
@@ -49,18 +48,18 @@ class Sidenav extends React.Component {
                     </a>
                 </div>
                 <div className="main-nav">
-                    <a href className="active">
+                    <button className="active">
                         <i className="material-icons">home</i>
                         Home
-                    </a>
-                    <a href>
+                    </button>
+                    <button>
                         <i className="material-icons">search</i>
                         Search
-                    </a>
-                    <a href>
+                    </button>
+                    <button>
                         <i className="material-icons">library_music</i>
                         Your Library
-                    </a>
+                    </button>
                 </div>
 
                 <div className="user-playlist">

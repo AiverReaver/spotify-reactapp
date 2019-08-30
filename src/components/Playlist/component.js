@@ -27,9 +27,9 @@ class Playlist extends React.Component {
             return (
                 <li className="user-song-item" key={track.id}>
                     <div className="play-song">
-                        <a href="#play" className="btn btn-ghost">
+                        <button className="btn btn-ghost">
                             <i className="material-icons">play_arrow</i>
-                        </a>
+                        </button>
                     </div>
                     <p className="add-song">
                         <i className="material-icons">favorite_border</i>
@@ -76,15 +76,13 @@ class Playlist extends React.Component {
                         </div>
                         <div className="playlist-container">
                             <div className="playlist-control">
-                                <a href="#play" className="btn btn-full">
-                                    PLAY
-                                </a>
-                                <a href="#fav" className="btn btn-ghost">
+                                <button className="btn btn-full">PLAY</button>
+                                <button className="btn btn-ghost">
                                     <i className="material-icons">favorite</i>
-                                </a>
-                                <a href="#more" className="btn btn-ghost">
+                                </button>
+                                <button className="btn btn-ghost">
                                     <i className="material-icons">more_horiz</i>
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
