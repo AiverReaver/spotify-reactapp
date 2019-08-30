@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spotify App created with reactjs alone(currently in development)
+
+## Preview
+![alt text](https://github.com/AiverReaver/spotify-reactapp/blob/master/preview/preview_1.png?raw=true)
+
+![alt text](https://github.com/AiverReaver/spotify-reactapp/blob/master/preview/preview_2.png?raw=true)
 
 ## Available Scripts
 
