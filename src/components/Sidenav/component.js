@@ -3,25 +3,25 @@ import React from 'react';
 import './Sidenav.css';
 
 class Sidenav extends React.Component {
-    componentDidMount() {
-        let hashParams = {};
-        let e,
-            r = /([^&;=]+)=?([^&;]*)/g,
-            q = window.location.hash.substring(1);
-        while ((e = r.exec(q))) {
-            hashParams[e[1]] = decodeURIComponent(e[2]);
-        }
-    }
-
     onPlaylistSelected = selectedPlaylist => {
         this.props.onPlaylistSelected(selectedPlaylist);
     };
 
     render() {
-        const { playlists } = this.props;
+        let { playlists, selectedPlaylist } = this.props;
+
+        // FIXME: Little hack for now
+        if (!selectedPlaylist) {
+            selectedPlaylist = {};
+            selectedPlaylist.id = '';
+        }
+
         const playlistName = playlists.map(playlist => {
             return (
                 <button
+                    className={
+                        selectedPlaylist.id === playlist.id ? 'active' : ''
+                    }
                     key={playlist.id}
                     onClick={e => {
                         this.onPlaylistSelected(playlist);
@@ -48,7 +48,7 @@ class Sidenav extends React.Component {
                     </a>
                 </div>
                 <div className="main-nav">
-                    <button className="active">
+                    <button>
                         <i className="material-icons">home</i>
                         Home
                     </button>

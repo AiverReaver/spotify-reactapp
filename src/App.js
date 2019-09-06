@@ -63,6 +63,7 @@ class App extends React.Component {
                     <Sidenav
                         onPlaylistSelected={this.onPlaylistSelected}
                         playlists={this.props.playlists}
+                        selectedPlaylist={this.state.selectedPlaylist}
                     />
                     <Playlist
                         setBackgrounColor={this.setBackgrounColor}
