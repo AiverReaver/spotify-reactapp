@@ -1,5 +1,8 @@
 # Spotify App created with reactjs alone
 
+#### note
+some function require premium subscriptions
+
 ## Preview
 ![alt text](https://github.com/AiverReaver/spotify-reactapp/blob/master/preview/preview_1.png?raw=true)
 
