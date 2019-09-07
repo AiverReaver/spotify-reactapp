@@ -1,4 +1,4 @@
-# Spotify App created with reactjs alone(currently in development)
+# Spotify App created with reactjs alone
 
 ## Preview
 ![alt text](https://github.com/AiverReaver/spotify-reactapp/blob/master/preview/preview_1.png?raw=true)
