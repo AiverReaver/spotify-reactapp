@@ -40,3 +40,19 @@ export const fetchCurrentlyPlayingTrack = () => async dispatch => {
         });
     }
 };
+
+export const startOrResumePlayer = () => async dispatch => {
+    await spotify.put('/me/player/play');
+};
+
+export const pausePlayer = () => async dispatch => {
+    await spotify.put('/me/player/pause');
+};
+
+export const playNextPlayer = () => async dispatch => {
+    await spotify.post('/me/player/next');
+};
+
+export const playPreviousPlayer = () => async dispatch => {
+    await spotify.post('/me/player/previous');
+};

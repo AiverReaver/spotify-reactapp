@@ -52,9 +52,10 @@
 .song-controls .next-song {
     align-self: center;
     height: 24px;
+    cursor: default;
 }
 
-.play-btn a {
+.play-btn button {
     margin: 0 10px;
 }
 
